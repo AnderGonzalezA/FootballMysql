@@ -216,11 +216,12 @@ public class ModifyFootballMatch {
 			public void actionPerformed(ActionEvent arg0) {
 				PreparedStatement pst2;
 				try {
-					pst2 = conn.prepareStatement("update matches set local_team=?,local_goals=?,visitor_team=?,visitor_goals=? where local_team=? and visitor_team=?;");
+					pst2 = conn.prepareStatement(
+							"update matches set local_team=?,local_goals=?,visitor_team=?,visitor_goals=? where local_team=? and visitor_team=?;");
 
 					pst2.setString(1, textFieldNewLocalTeam.getText());
 					pst2.setString(2, textFieldNewLocalGoals.getText());
-					pst2.setString(3,textFieldNewVisitorTeam.getText());
+					pst2.setString(3, textFieldNewVisitorTeam.getText());
 					pst2.setString(4, textFieldNewVisitorGoals.getText());
 					pst2.setString(5, textFieldLocalTeam.getText());
 					pst2.setString(6, textFieldVisitorTeam.getText());
